@@ -1,7 +1,7 @@
 import random
 
 import vk_api
-from vk_api.longpoll import VkLongPoll, VkEventType
+from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 from commander.commander import Commander
 
@@ -17,7 +17,7 @@ token = "Your API token here..."
 vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkLongPoll(vk)
+longpoll = VkBotLongPoll(vk, "id группы без ковычек")
 
 # Commander
 commander = Commander()
@@ -27,10 +27,10 @@ print("Бот запущен")
 for event in longpoll.listen():
 
     # Если пришло новое сообщение
-    if event.type == VkEventType.MESSAGE_NEW:
+    if event.type == VkBotEventType.MESSAGE_NEW:
 
         # Если оно имеет метку для меня( то есть бота)
-        if event.to_me:
+        if event.from_chat:
 
             # Сообщение от пользователя
             request = event.text
