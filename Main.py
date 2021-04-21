@@ -40,4 +40,4 @@ for event in longpoll.listen():
                 write_msg(event.user_id, bot.new_message(event.text))
 
             print('Text: ', event.text)
-            print("-------------------")
+            print("-------------------") 
