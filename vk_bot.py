@@ -10,7 +10,7 @@ class VkBot:
         self._USER_ID = user_id
         self._USERNAME = self._get_user_name_from_vk_id(user_id)
 
-        self._COMMANDS = ["ПРИВЕТ", "ПОГОДА", "ВРЕМЯ", "ПОКА"]
+        self._COMMANDS = ["ПРИВЕТ", "ПОГОДА", "ВРЕМЯ", "ПОКА", "КОД"]
 
     def _get_user_name_from_vk_id(self, user_id):
         request = requests.get("https://vk.com/id"+str(user_id))
@@ -22,9 +22,14 @@ class VkBot:
 
     def new_message(self, message):
 
+       # Код
+        if message.upper() == self._COMMANDS[5]:
+            return f"Ебал я в рот этот гавнокод :-( 😠🤬, {self._USERNAME}!"
+
+
         # Привет
         if message.upper() == self._COMMANDS[0]:
-            return f"Привет-привет, {self._USERNAME}!"
+            return f"Привет-привет :-) , {self._USERNAME}!"
 
         # Погода
         elif message.upper() == self._COMMANDS[1]:
@@ -36,10 +41,10 @@ class VkBot:
 
         # Пока
         elif message.upper() == self._COMMANDS[3]:
-            return f"Пока-пока, {self._USERNAME}!"
+            return f"Пока-пока 👋🏻, {self._USERNAME}!"
 
         else:
-            return "Не понимаю о чем вы..."
+            return "Хуйни не неси 🤪😎🤬"
 
     def _get_time(self):
         request = requests.get("https://my-calend.ru/date-and-time-today")
