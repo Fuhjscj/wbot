@@ -31,7 +31,7 @@ class Commander:
         command = self.get_command(user_input)
 
         if command is None:
-            return "Неверная команда"
+            return "Неверная команда,сука 🤬 не пиши так больше, понял?😎"
         else:
             os.system(command)
             return "Done!"
