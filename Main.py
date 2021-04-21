@@ -1,7 +1,7 @@
 import random
 
 import vk_api
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
+from vk_api.longpoll import VkLongPoll, VkEventType
 
 # --
 from commander.commander import Commander
@@ -14,19 +14,19 @@ def write_msg(user_id, message):
 
 
 # API-ключ созданный ранее
-token = "Your API token here..."
+token = ""
 
 # Авторизуемся как сообщество
 vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkBotLongPoll(vk, "id группы без ковычек")
+longpoll = VkLongPoll(vk, "id группы без ковычек")
 
 commander = Commander()
 print("Server started")
 for event in longpoll.listen():
 
-    if event.type == VkBotEventType.MESSAGE_NEW:
+    if event.type == VkEventType.MESSAGE_NEW:
 
         if event.from_chat:
 
