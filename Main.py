@@ -20,7 +20,7 @@ token = ""
 vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkLongPoll(vk, "id группы без ковычек")
+longpoll = VkLongPoll(vk)
 
 commander = Commander()
 print("Server started")
