@@ -23,8 +23,8 @@ class VkBot:
     def new_message(self, message):
 
        # Код
-        if message.upper() == self._COMMANDS[5]:
-            return f"Ебал я в рот этот гавнокод :-( 😠🤬, {self._USERNAME}!"
+        if message.upper() == self._COMMANDS[4]:
+            return f"Ебал я в рот этот гавнокод :-( 😠🤬"
 
 
         # Привет
