@@ -14,13 +14,13 @@ def write_msg(user_id, message):
 
 
 # API-ключ созданный ранее
-token = "апи группы" 
+token = "Your API token here..."
 
 # Авторизуемся как сообщество
-vk_session = vk_api.VkApi(token=token)
+vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkBotLongPoll(vk_session,'id группы')
+longpoll = VkBotLongPoll(vk, "id группы без ковычек")
 
 commander = Commander()
 print("Server started")
@@ -29,7 +29,7 @@ for event in longpoll.listen():
     if event.type == VkBotEventType.MESSAGE_NEW:
 
         if event.from_chat:
-       write_msg(event.user_id, event.random_id, " ")
+
             print(f'New message from {event.user_id}', end='')
 
             bot = VkBot(event.user_id)
@@ -40,4 +40,4 @@ for event in longpoll.listen():
                 write_msg(event.user_id, bot.new_message(event.text))
 
             print('Text: ', event.text)
-            print("-------------------") 
+            print("-------------------")
