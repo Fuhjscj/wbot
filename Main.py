@@ -20,7 +20,7 @@ token = "3dc507ab92ffa01ff8bcad1f0cbd915c87f1eedb30ddfe58202e17cad410a092c812ddf
 vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkBotLongPoll(vk, "")
+longpoll = VkBotLongPoll(vk,"204077562")
 
 commander = Commander()
 print("Server started")
