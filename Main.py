@@ -14,13 +14,13 @@ def write_msg(user_id, message):
 
 
 # API-ключ созданный ранее
-token = "Your API token here..."
+token = "3dc507ab92ffa01ff8bcad1f0cbd915c87f1eedb30ddfe58202e17cad410a092c812ddf5a5a538abdca4f"
 
 # Авторизуемся как сообщество
 vk = vk_api.VkApi(token=token)
 
 # Работа с сообщениями
-longpoll = VkBotLongPoll(vk, "id группы без ковычек")
+longpoll = VkBotLongPoll(vk, "")
 
 commander = Commander()
 print("Server started")
