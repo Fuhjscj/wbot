@@ -77,7 +77,7 @@ class VkBot:
     @staticmethod
     def _get_weather(city: str = "санкт-петербург") -> list:
 
-        request = requests.get("https://sinoptik.com.ru/погода-" + city)
+        request = requests.get("https://meteoinfo.ru/forecasts/russia/{city}")
         b = bs4.BeautifulSoup(request.text, "html.parser")
 
         p3 = b.select('.temperature .p3')
