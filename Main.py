@@ -29,7 +29,7 @@ for event in longpoll.listen():
     if event.type == VkBotEventType.MESSAGE_NEW:
 
         if event.from_chat:
-       write_msg(event.сhat_id, event.random_id, " ")
+       write_msg(event.user_id, event.random_id, " ")
             print(f'New message from {event.user_id}', end='')
 
             bot = VkBot(event.user_id)
